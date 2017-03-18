@@ -12,7 +12,7 @@ headers.update(
     }
 )
 
-url = "https://www.youtube.com/watch?v=YQHsXMglC9A"
+url = "https://www.youtube.com/watch?v=hLQl3WQQoQ0"
 
 r = requests.get(url, headers=headers)
 if r.status_code != 200:
@@ -26,8 +26,13 @@ title = tree.xpath('//span[@class="watch-title"]/text()')
 views = tree.xpath('//div[@class="watch-view-count"]/text()')
 nextvideo = tree.xpath('//span[@class="title"]/text()')
 nextvideoviews = tree.xpath('//span[@class="stat view-count"]/text()')
+# nextvideourl = tree.xpath('//*[@id="watch7-sidebar-modules"]/div[1]/div/div[2]/ul/li/div[1]/a/href//text()')
+
 
 print(title)
 print(views)
 print(nextvideo[0])
 print(nextvideoviews[0])
+# print(nextvideourl)
+
+
