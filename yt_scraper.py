@@ -4,6 +4,7 @@
 import threading
 import requests
 import sys
+import csv
 
 from splinter import Browser
 from lxml import html
@@ -19,7 +20,7 @@ headers.update(
 # open browser 
 browser = Browser()
 
-# go to Adele - Hello video on Youtube
+# Insert video URL
 browser.visit('https://www.youtube.com/watch?v=YQHsXMglC9A')
 
 # non-stop loop
@@ -35,26 +36,42 @@ def looper():
     # tree
     tree = html.fromstring(r.text)
 
-    # data current video
+    # video data
+
+    ## title cleaning
     title = str(browser.title)
-    url = str(browser.url)
+    title = title.strip('YouTube')
+    title = title.split(' - ')
+
+    ## artist
+    artist = title[0]
+
+    ## song
+    song = title[1]
+
+    ## views
     views = str(tree.xpath('//div[@class="watch-view-count"]/text()'))
+    views = views.lstrip('[\'')
+    views = views.rstrip('Anrufe\']') 
 
-    # data next video
-    titlenext = str(tree.xpath('//span[@class="title"]/text()'))
-    viewsnexr = str(tree.xpath('//span[@class="stat view-count"]/text()'))
-    # nextvideourl = tree.xpath('//*[@id="watch7-sidebar-modules"]/div[1]/div/div[2]/ul/li/div[1]/a/href//text()')
+    ## url
+    url = str(browser.url)
 
-    # export data in file
-    file = open("adele.txt", "a")
-    file.write(title + " ")
-    file.write(url + " ")
-    file.write(views + " ")
-    file.write("\n")
-    file.close()
+    ## song code
+    code = url.split('=')
+    code = code[1]
 
-    # print check
-    print ("ok")
+    # export data in csv
+    c = csv.writer(open("adele4.csv", "a"))
+    c.writerow((artist,song,views,url,code))
+
+#    currentartist = print(artist)
+#
+#    if currentartist == artist:
+#    	print("identique")
+
+#    else:
+#    	print("different")
 
 #to start 
 looper()
