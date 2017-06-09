@@ -25,8 +25,8 @@ Currently, we are leading the beta-experimentation to test the script, to debug 
 Our short term goal is to run the script on different computers to confirm or infirm the fourth hypothesis : 
 > "(iv) The algorithm is not sensitive to users preferences, history, demographic characteristis, etc."
 
-### Long-term goals
-Coming soon.
+### Mid-term goals
+You can follow the Kanban of the project [here](https://github.com/jeremiepoiroux/RecoYouTube/projects/1).
 
 ## Run the script
 To run the script on your computer, you need to follow these steps:
