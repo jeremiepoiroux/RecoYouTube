@@ -31,7 +31,20 @@ You can follow the Kanban of the project [here](https://github.com/jeremiepoirou
 ## Run the script
 To run the script on your computer, you need to follow these steps:
 1. Open the terminal
-2. Check if Python is installed: type "python", it shoul return ">>>". If not, you can download it [here](https://www.python.org/downloads/) but I recommand using [Anaconda](https://www.continuum.io/downloads)
+2. Check if Python 3.x is installed: type "python", it shoul return ">>>". If not, you can download it [here](https://www.python.org/downloads/) but I recommand using [Anaconda](https://www.continuum.io/downloads)
 3. You can quit python by doing ctrl+d. 
 4. Check if pip is effectively installed: type "pip" in the terminal. If not, here is the [doc](https://pip.pypa.io/en/stable/installing/).
-5. Install [Splinter](https://splinter.readthedocs.io/en/latest/#) using pip: type "pip install splinter"
+5. Make sure you have already [set up](https://splinter.readthedocs.io/en/latest/contribute/setting-up-your-development-environment.html) your development environment
+5. Install [Splinter](https://splinter.readthedocs.io/en/latest/#) using pip3: type "pip3 install splinter". It should also insall selenium
+7. Download the latest geckodriver [here](https://github.com/mozilla/geckodriver/releases), extract the file from the archive and rename it to "geckodriver" (with no "2" at the end if there is one).
+8. Go to the folder with the terminal: assuming you have simply open the terminal, you are in the home folder. If the geckodriver is in the Download folder, type cd /Download.
+9. Now your command line should be "xxx@xxxx : ~/Download". Move the geckodriver to a system folder: mv geckodriver /usr/local/bin
+10. Make it executable: chmode +x /usr/local/bin/geckodriver
+11. Make sure you have the last version (53 at least) of Firefox: type "firefox -V" on the terminal to check. It can be pretty triky to get it for Debian because you have to put the old version away. [Here](http://libre-software.net/how-to-install-firefox-on-ubuntu-linux-mint/) is a good tutorial
+12. Download this folder from GitHub
+13. Move to this folder with the terminal: "cd xxx/xxx/RecoYouTube"
+14. Launch the script: type "python3 yt_scraper.py"
+15. Go to the YouTube video from which you want to start the script and copy/paste the URL to the prompt in the terminal
+16. Name your csv file in the prompt, for example "starting-adele-hello" (without the "" and the .csv"
+17. If there is no error(s), the script should open Firefox, head to the video and start storing the data to the csv file. Note: it only store one line per song.
+18. To stop the script, simply do ctrl+c
