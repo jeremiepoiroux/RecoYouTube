@@ -15,7 +15,7 @@ from lxml import html
 source_url = input('youtube video url to begin the analysis: ')
 
 # ask for csv file title
-csv_title = input('csv file title: ')
+csv_title = input('csv file title (without .csv): ')
 
 # header and user-agent
 headers = requests.utils.default_headers()
@@ -25,7 +25,7 @@ headers.update(
     }
 )
 
-# open browser 
+# open browser
 browser = Browser()
 
 # Insert video URL
@@ -55,12 +55,11 @@ def looper():
 
     # title cleaning
     title = str(browser.title)
-    title = title.rstrip('YouTube')
-    # title = title.split(' - ')
+    title = title.rstrip('- YouTube')
 
+    # title = title.split(' - ')
     # artist
     # artist = title[0]
-
     # song
     # song = title[1]
 
