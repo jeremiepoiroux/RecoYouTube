@@ -39,7 +39,7 @@ To run the script on your computer, you need to follow these steps:
 7. Download the latest geckodriver [here](https://github.com/mozilla/geckodriver/releases), extract the file from the archive and rename it to "geckodriver" (with no "2" at the end if there is one).
 8. Go to the folder with the terminal: assuming you have simply open the terminal, you are in the home folder. If the geckodriver is in the Download folder, type cd /Download.
 9. Now your command line should be "xxx@xxxx : ~/Download". Move the geckodriver to a system folder: mv geckodriver /usr/local/bin
-10. Make it executable: chmode +x /usr/local/bin/geckodriver
+10. Make it executable: chmod +x /usr/local/bin/geckodriver
 11. Make sure you have the last version (53 at least) of Firefox: type "firefox -V" on the terminal to check. It can be pretty triky to get it for Debian because you have to put the old version away. [Here](http://libre-software.net/how-to-install-firefox-on-ubuntu-linux-mint/) is a good tutorial
 12. Download this folder from GitHub
 13. Move to this folder with the terminal: "cd xxx/xxx/RecoYouTube"
