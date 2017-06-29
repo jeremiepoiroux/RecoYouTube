@@ -47,4 +47,5 @@ To run the script on your computer, you need to follow these steps:
 15. Go to the YouTube video from which you want to start the script and copy/paste the URL to the prompt in the terminal
 16. Name your csv file in the prompt, for example "starting-adele-hello" (without the "" and the .csv)
 17. If there is no error(s), the script should open Firefox, head to the video and start storing the data to the csv file. Note: it only store one line per song.
-18. To stop the script, simply do ctrl+c
+18. You can navigate through YouTube, listen to other songs, etc. The script will only store informations for videos. PLEASE NOTE: When you are not on a video page (e.g. search page), the terminal will report you an « Index out of range » error. No worries, it will continue his job as soon as you are on a video page.
+19. To stop the script, simply do ctrl+c
