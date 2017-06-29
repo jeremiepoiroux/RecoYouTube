@@ -35,7 +35,7 @@ browser.visit(source_url)
 playlist = 0
 
 # random value for new_url
-new_url = 2
+new_url = "random_value"
 
 # non-stop loop
 # ctrl+c to stop manually
@@ -55,7 +55,7 @@ def looper():
 
     # title cleaning
     title = str(browser.title)
-    title = title.rstrip('- YouTube')
+    title = title.replace('- YouTube','')
 
     # title = title.split(' - ')
     # artist
@@ -78,7 +78,7 @@ def looper():
     # output to csv only if new song
     global new_url
     if new_url != url:
-        time.sleep(5)
+        time.sleep(6)
         # incrementation
         global playlist
         playlist += 1
