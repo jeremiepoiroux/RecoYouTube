@@ -37,12 +37,6 @@ playlist = 0
 # random value for new_url
 new_url = "random_value"
 
-# title of csv file
-title_1 = title = str(browser.title)
-csv_title = title_1 + '_' + day
-
-
-
 # non-stop loop
 # ctrl+c to stop manually
 
@@ -90,6 +84,7 @@ def looper():
         playlist += 1
 
         # export data in csv
+        csv_title = title + '_' + day
         c = csv.writer(open(csv_title + ".csv", "a"))
         c.writerow((playlist, title, views, url, code, ctime()))
 
